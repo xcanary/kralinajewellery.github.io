@@ -1,0 +1,257 @@
+/* =========================
+   BASE RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.prdPage .slider-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+    pointer-events: none;
+}
+
+/* logo */
+.prdPage .slider-logo img {
+    width: 320px;
+    max-width: 80vw;
+    opacity: 0.95;
+    filter: drop-shadow(0 0 25px rgba(0, 0, 0, 0.85));
+    margin-bottom: 10px;
+}
+
+/* başlık */
+.prdPage .slider-logo h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: #d4af37;
+    margin: 5px 0;
+    letter-spacing: 1px;
+}
+
+/* alt yazı */
+.prdPage .slider-logo p {
+    font-size: 14px;
+    color: #e0e0e0;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+body.prdPage {
+    background: #1a1a1a;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    color: #fff;
+}
+
+/* =========================
+   NAVBAR (FIXED + GLASS)
+========================= */
+
+.prdPage .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+
+    z-index: 9999;
+
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12px);
+
+    display: flex;
+    align-items: center;
+}
+
+/* container */
+.prdPage .nav-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* logo */
+.prdPage .nav-logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #d4af37;
+}
+
+/* menu */
+.prdPage .nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.prdPage .nav-menu a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.prdPage .nav-menu a:hover {
+    color: #d4af37;
+}
+
+/* =========================
+   SHOWCASE / SLIDER
+========================= */
+
+.prdPage .showcase {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* slider */
+.prdPage .slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* slides */
+.prdPage .slides {
+    position: absolute;
+    inset: 0;
+}
+
+/* =========================
+   SLIDES (SMOOTH + DARK)
+========================= */
+
+.prdPage .slide {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0;
+    transition: opacity 1.8s ease-in-out;
+
+    filter: brightness(0.45);
+    /* 🔥 DAHA LÜKS KARARTMA */
+}
+
+.prdPage .slide.active {
+    opacity: 1;
+}
+
+/* =========================
+   CENTER LOGO (PREMIUM)
+========================= */
+
+.prdPage .slider-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+.prdPage .slider-logo img {
+    width: 460px;
+    /* 🔥 DAHA BÜYÜK */
+    max-width: 85vw;
+
+    opacity: 0.95;
+
+    filter: drop-shadow(0 0 35px rgba(0, 0, 0, 0.9));
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.prdPage .ring-section {
+    padding: 80px 20px;
+    background: #1f1f1f;
+}
+
+.prdPage .ring-section h2 {
+    text-align: center;
+    color: #d4af37;
+    margin-bottom: 30px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* GRID */
+.prdPage .ring-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+
+    max-width: 1200px;
+    margin: auto;
+}
+
+.prdPage .ring-grid img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.prdPage .footer {
+    text-align: center;
+    padding: 40px;
+    background: #111;
+    color: #aaa;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    /* SADECE MENÜYÜ GİZLE */
+    .prdPage .nav-menu {
+        display: none !important;
+    }
+
+    /* logo ortada kalsın */
+    .prdPage .nav-container {
+        justify-content: center;
+    }
+
+    /* logo boyutu mobil */
+    .prdPage .nav-logo h1 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .prdPage .ring-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .prdPage .slider-logo img {
+        width: 220px;
+    }
+}
